@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <div className="pb-8 ">
+    <div className="pb-8 max-w-4xl mx-auto px-4">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
@@ -16,20 +16,20 @@ const Projects = () => {
       <div>
         {PROJECTS.map((project, index) => {
           return (
-            <div key={index} className="mb-8 flex flex-wrap lg:items-start">
+            <div key={index} className="mb-8 flex flex-wrap lg:flex-nowrap lg:items-start">
               {/* Image */}
               <motion.div
                 whileInView={{ opacity: 1, x: 0 }}
                 initial={{ opacity: 0, x: -100 }}
                 transition={{ duration: 1 }}
-                className="flex justify-center lg:justify-start mr-10 w-full lg:w-1/4"
+                className="flex justify-center w-full lg:w-auto lg:shrink-0 lg:mr-10"
               >
                 <img
                   src={project.image}
                   width={250}
                   height={250}
                   alt={project.title}
-                  className="mb-6 rounded"
+                  className="mb-6 rounded w-[250px] h-[250px] object-cover"
                 />
               </motion.div>
 
@@ -38,7 +38,7 @@ const Projects = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 initial={{ opacity: 0, x: 100 }}
                 transition={{ duration: 1 }}
-                className="w-full max-w-xl lg:w-3/4 text-left"
+                className="w-full text-left"
               >
                 <h3 className="mb-2 font-semibold text-2xl text-left">
                   {project.title}
@@ -46,10 +46,10 @@ const Projects = () => {
 
                 <p className="mb-4 text-stone-400">{project.description}</p>
 
-                <div>
+                <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, index) => (
                     <span
-                      className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium text-stone-500"
+                      className="rounded bg-stone-900 p-2 text-sm font-medium text-stone-500"
                       key={index}
                     >
                       {tech}
