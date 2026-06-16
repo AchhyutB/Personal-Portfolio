@@ -1,0 +1,2 @@
+-for deploy to the website run this command.
+npm run deploy
