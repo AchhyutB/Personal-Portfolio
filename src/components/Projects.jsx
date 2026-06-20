@@ -16,7 +16,10 @@ const Projects = () => {
       <div>
         {PROJECTS.map((project, index) => {
           return (
-            <div key={index} className="mb-8 flex flex-wrap lg:flex-nowrap lg:items-start">
+            <div
+              key={index}
+              className="mb-8 flex flex-wrap lg:flex-nowrap lg:items-start"
+            >
               {/* Image */}
               <motion.div
                 whileInView={{ opacity: 1, x: 0 }}
@@ -26,10 +29,10 @@ const Projects = () => {
               >
                 <img
                   src={project.image}
-                  width={250}
+                  width={450}
                   height={250}
                   alt={project.title}
-                  className="mb-6 rounded w-[250px] h-[250px] object-cover"
+                  className="mb-6 rounded-[30px] w-[450px] h-[250px] object-fit"
                 />
               </motion.div>
 
@@ -47,7 +50,7 @@ const Projects = () => {
                 <p className="mb-4 text-stone-400">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, index) => (
+                  {project.techStack.map((tech, index) => (
                     <span
                       className="rounded bg-stone-900 p-2 text-sm font-medium text-stone-500"
                       key={index}
