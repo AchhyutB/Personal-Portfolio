@@ -20,13 +20,13 @@ const childVariants = {
 };
 const Hero = () => {
   return (
-    <div className="pb-4 lg:mb-36">
+    <div className="pb-4 sm:ml-9 lg:mb-36">
       <div className="flex flex-wrap lg:flex-row-reverse">
         <div className=" w-full lg:w-1/2">
           <div className="flex justify-center lg:p-8">
             <motion.img
               src={profilePic}
-              className="border border-stone-900 rounded-3xl w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[33rem] h-auto object-cover"
+              className="border border-stone-900 rounded-3xl w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[33rem] h-auto object-cover sm:ml-32"
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 1.5 }}
@@ -34,7 +34,7 @@ const Hero = () => {
             />
           </div>
         </div>
-        <div className="w-full lg:w-1/2">
+        <div className="w-full  lg:w-1/2">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -65,7 +65,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               download
-              className="bg-white rounded-full p-4 text-sm text-stone-800 mb-10"
+              className="bg-white rounded-full p-4 text-sm font-semibold text-stone-800 mb-10"
             >
               Download Resume
             </motion.a>

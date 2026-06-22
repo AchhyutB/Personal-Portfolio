@@ -58,10 +58,12 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    name: "Agentic AI - Automated Marketing Platform",
+    title: "Agentic AI - Automated Marketing Platform",
     image: project1,
     status: "In Progress",
-    description: `An AI-powered marketing platform where users describe their brand and the system generates ready-to-post content for multiple social media platforms. The goal is to automate content creation using intelligent agents and LLM workflows.`,
+    github: "https://github.com/yourusername/agentic-ai",
+    liveDemo: "/",
+    description: `An AI-powered marketing platform where users describe their brand and the system generates ready-to-post content for multiple social media platforms.`,
     techStack: [
       "Tailwind CSS",
       "Agentic AI",
@@ -75,9 +77,11 @@ export const PROJECTS = [
   },
 
   {
-    name: "Panaghar - Peer to Peer Book Rental Platform",
+    title: "Panaghar - Peer to Peer Book Rental Platform",
     image: project2,
     status: "Completed",
+    github: "https://github.com/yourusername/agentic-ai",
+    liveDemo: "/",
     description: `A peer-to-peer online book rental and selling platform that allows users to buy, sell, and rent books without offline hassle. Focused on making book exchange simple, fast, and accessible.`,
     techStack: [
       "HTML",
@@ -91,17 +95,21 @@ export const PROJECTS = [
   },
 
   {
-    name: "Nike Clone - Landing Page",
+    title: "Nike Clone - Landing Page",
     image: project3,
     status: "Completed",
+    github: "https://github.com/yourusername/agentic-ai",
+    liveDemo: "https://nike-clone-weld-psi.vercel.app/",
     description: `A modern, animated Nike-inspired landing page showcasing sneakers with smooth UI transitions and interactive animations. Focused on premium visual storytelling.`,
     techStack: ["React.js", "Tailwind CSS", "GSAP", "Framer Motion"],
   },
 
   {
-    name: "Apple Clone - Landing Page",
+    title: "Apple Clone - Landing Page",
     image: project4,
     status: "Completed",
+    github: "https://github.com/yourusername/agentic-ai",
+    liveDemo: "/",
     description: `A high-end Apple-inspired landing page replicating Apple’s cinematic product presentation style using smooth animations and 3D effects.`,
     techStack: [
       "React.js",
@@ -113,17 +121,21 @@ export const PROJECTS = [
   },
 
   {
-    name: "Hotel Booking Website",
+    title: "Hotel Booking Website",
     image: project5,
     status: "Completed",
+    github: "https://github.com/yourusername/agentic-ai",
+    liveDemo: "https://hotel-booking-iota-five.vercel.app/",
     description: `A responsive hotel booking frontend platform allowing users to browse hotels, view details, and simulate booking flows. Focused on clean UI and user experience.`,
     techStack: ["React.js", "Tailwind CSS", "GSAP", "Framer Motion"],
   },
 
   {
-    name: "Weather App - 3D Experience",
+    title: "Weather App - 3D Experience",
     image: project6,
     status: "Completed",
+    github: "https://github.com/yourusername/agentic-ai",
+    liveDemo: "https://realistic-weather-app.vercel.app/",
     description: `An interactive weather platform built around a 3D Earth experience, helping users plan their day through real-time conditions, smooth globe navigation, and location-based insights for travel and commuting decisions.`,
     techStack: [
       "React.js",
