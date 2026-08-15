@@ -1,4 +1,3 @@
-import { image } from "framer-motion/client";
 import project1 from "../assets/projects/Project-1.png";
 import project2 from "../assets/projects/Project-2.png";
 import project3 from "../assets/projects/Project-5.png";
@@ -9,8 +8,6 @@ import project6 from "../assets/projects/Project-4.png";
 export const HERO_CONTENT = `I am a Full Stack Developer with 2 years of experience building scalable and performance-focused web applications. I specialize in creating modern, responsive UIs using React and Next.js, and developing robust backend systems with Node.js, Express, and databases like MySQL, PostgreSQL, and MongoDB.
 I have experience working on AI-based applications as well as full stack projects including Panaghar, a hotel booking platform, and UI-focused builds inspired by Apple and Nike.I use modern tools such as Docker, Redis, Tailwind CSS, Framer Motion, and GSAP to deliver smooth, production-ready applications.My focus is on building clean, scalable, and user-centric digital experiences while actively exploring AI integration in web development.
 `;
-
-export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer with a passion for creating efficient and user-friendly web applications. With 5 years of professional experience, I have worked with a variety of technologies, including React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new technologies, and contributing to open-source projects.`;
 
 export const EXPERIENCES = [
   {
@@ -61,7 +58,7 @@ export const PROJECTS = [
     title: "Agentic AI - Automated Marketing Platform",
     image: project1,
     status: "In Progress",
-    github: "https://github.com/yourusername/agentic-ai",
+    github: "https://github.com/AchhyutB/agentic-ai-marketing",
     liveDemo: "/",
     description: `An AI-powered marketing platform where users describe their brand and the system generates ready-to-post content for multiple social media platforms.`,
     techStack: [
@@ -80,7 +77,7 @@ export const PROJECTS = [
     title: "Panaghar - Peer to Peer Book Rental Platform",
     image: project2,
     status: "Completed",
-    github: "https://github.com/yourusername/agentic-ai",
+    github: "https://github.com/AchhyutB/panaghar",
     liveDemo: "/",
     description: `A peer-to-peer online book rental and selling platform that allows users to buy, sell, and rent books without offline hassle. Focused on making book exchange simple, fast, and accessible.`,
     techStack: [
@@ -98,7 +95,7 @@ export const PROJECTS = [
     title: "Nike Clone - Landing Page",
     image: project3,
     status: "Completed",
-    github: "https://github.com/yourusername/agentic-ai",
+    github: "https://github.com/AchhyutB/nike-clone",
     liveDemo: "https://nike-clone-weld-psi.vercel.app/",
     description: `A modern, animated Nike-inspired landing page showcasing sneakers with smooth UI transitions and interactive animations. Focused on premium visual storytelling.`,
     techStack: ["React.js", "Tailwind CSS", "GSAP", "Framer Motion"],
@@ -108,7 +105,7 @@ export const PROJECTS = [
     title: "Apple Clone - Landing Page",
     image: project4,
     status: "Completed",
-    github: "https://github.com/yourusername/agentic-ai",
+    github: "https://github.com/AchhyutB/apple-clone",
     liveDemo: "/",
     description: `A high-end Apple-inspired landing page replicating Apple’s cinematic product presentation style using smooth animations and 3D effects.`,
     techStack: [
@@ -124,7 +121,7 @@ export const PROJECTS = [
     title: "Hotel Booking Website",
     image: project5,
     status: "Completed",
-    github: "https://github.com/yourusername/agentic-ai",
+    github: "https://github.com/AchhyutB/hotel-booking",
     liveDemo: "https://hotel-booking-iota-five.vercel.app/",
     description: `A responsive hotel booking frontend platform allowing users to browse hotels, view details, and simulate booking flows. Focused on clean UI and user experience.`,
     techStack: ["React.js", "Tailwind CSS", "GSAP", "Framer Motion"],
@@ -134,7 +131,7 @@ export const PROJECTS = [
     title: "Weather App - 3D Experience",
     image: project6,
     status: "Completed",
-    github: "https://github.com/yourusername/agentic-ai",
+    github: "https://github.com/AchhyutB/realistic-weather-app",
     liveDemo: "https://realistic-weather-app.vercel.app/",
     description: `An interactive weather platform built around a 3D Earth experience, helping users plan their day through real-time conditions, smooth globe navigation, and location-based insights for travel and commuting decisions.`,
     techStack: [
@@ -149,6 +146,6 @@ export const PROJECTS = [
 
 export const CONTACT = {
   address: "Pokhara, Gandaki-Province, Nepal",
-  phoneNo: "+977 9860390766 ",
+  phoneNo: "+977 9860390766",
   email: "achhyut.baral03@gmail.com",
 };

@@ -1,79 +1,112 @@
 import profilePic from "../assets/Profile_pic.jpg";
 import { HERO_CONTENT } from "../constants";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { HiArrowDown, HiArrowUpRight } from "react-icons/hi2";
+const HeroScene = lazy(() => import("./HeroScene"));
 
-const containerVariants = {
-  hidden: { opacity: 0, x: -100 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.5,
-      staggerChildren: 0.5,
-    },
-  },
-};
-
-const childVariants = {
-  hidden: { opacity: 0, x: -100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-};
+const rise = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
 const Hero = () => {
+  const [showScene, setShowScene] = useState(false);
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+      return undefined;
+    const revealScene = () => setShowScene(true);
+    const idleId = window.requestIdleCallback
+      ? window.requestIdleCallback(revealScene, { timeout: 1800 })
+      : window.setTimeout(revealScene, 700);
+    return () => {
+      if (window.cancelIdleCallback && typeof idleId === "number")
+        window.cancelIdleCallback(idleId);
+      else window.clearTimeout(idleId);
+    };
+  }, []);
   return (
-    <div className="pb-4 sm:ml-9 lg:mb-36">
-      <div className="flex flex-wrap lg:flex-row-reverse">
-        <div className=" w-full lg:w-1/2">
-          <div className="flex justify-center lg:p-8">
-            <motion.img
-              src={profilePic}
-              className="border border-stone-900 rounded-3xl w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[33rem] h-auto object-cover sm:ml-32"
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 1.5 }}
-              alt="ProfilePic"
-            />
+    <section
+      id="top"
+      className="relative isolate grid min-h-[calc(100svh-80px)] items-center gap-12 py-16 sm:py-20 lg:min-h-[calc(100svh-112px)] lg:grid-cols-[1.08fr_.92fr] lg:gap-16 lg:py-16 xl:gap-24"
+    >
+      {showScene && (
+        <Suspense fallback={null}>
+          <HeroScene />
+        </Suspense>
+      )}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        transition={{ staggerChildren: 0.12, delayChildren: 0.1 }}
+        className="relative z-10"
+      >
+        <motion.p
+          variants={rise}
+          transition={{ duration: 0.6 }}
+          className="eyebrow flex items-center gap-3"
+        >
+          <span className="h-2 w-2 animate-pulse rounded-full bg-stone-200" />
+          Available for opportunities · Nepal
+        </motion.p>
+        <motion.h1
+          variants={rise}
+          transition={{ duration: 0.7 }}
+          className="mt-7 max-w-4xl text-[clamp(3.8rem,8.4vw,9rem)] font-semibold leading-[.86] tracking-[-.09em] text-stone-100"
+        >
+          Designing the <span className="text-stone-500">web</span>
+          <br />
+          with intent.
+        </motion.h1>
+        <motion.p
+          variants={rise}
+          transition={{ duration: 0.7 }}
+          className="mt-9 max-w-xl text-base leading-8 text-stone-400 sm:text-lg sm:leading-8"
+        >
+          {HERO_CONTENT.split("\n")[0]}
+        </motion.p>
+        <motion.div
+          variants={rise}
+          transition={{ duration: 0.7 }}
+          className="mt-10 flex flex-wrap items-center gap-3"
+        >
+          <a
+            href="#work"
+            className="flex items-center gap-2 rounded-full bg-stone-100 px-5 py-3 text-sm font-semibold text-stone-900 transition hover:bg-white"
+          >
+            Explore my work <HiArrowDown />
+          </a>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-medium text-stone-300 transition hover:border-white/40 hover:text-white"
+          >
+            Resume <HiArrowUpRight />
+          </a>
+        </motion.div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.94, y: 28 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.25 }}
+        className="relative z-10 mx-auto w-full max-w-md lg:max-w-[34rem] xl:max-w-[38rem]"
+      >
+        <div className="absolute -inset-3 rounded-[2rem] border border-white/[.07]" />
+        <div className="relative overflow-hidden rounded-[1.65rem] border border-white/10 bg-stone-900 p-2 shadow-2xl shadow-black">
+          <img
+            src={profilePic}
+            alt="Achhyut Baral"
+            fetchPriority="high"
+            decoding="async"
+            sizes="(max-width: 1024px) 88vw, 40vw"
+            className="aspect-[4/5] w-full rounded-[1.2rem] object-cover object-top grayscale transition duration-700 hover:grayscale-0"
+          />
+          <div className="absolute inset-x-2 bottom-2 flex items-end justify-between rounded-b-[1.2rem] bg-gradient-to-t from-black/80 to-transparent p-5">
+            <span className="font-mono text-[10px] uppercase tracking-[.2em] text-stone-300">
+              Full-stack developer
+            </span>
+            <span className="text-xs text-stone-400">01 / 01</span>
           </div>
         </div>
-        <div className="w-full  lg:w-1/2">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
-            className=" flex flex-col items-center lg:items-start mt-10"
-          >
-            <motion.h2
-              variants={childVariants}
-              className="pb-2 text-4xl tracking-tighter lg:text-8xl"
-            >
-              Achhyut Baral
-            </motion.h2>
-            <motion.span
-              variants={childVariants}
-              className="bg-gradient-to-r from-stone-300 to-stone-600 bg-clip-text text-3xl tracking-tight text-transparent"
-            >
-              Full Stack Developer
-            </motion.span>
-            <motion.p
-              variants={childVariants}
-              className="my-2 max-w-lg py-6 text-xl leading-relaxed tracking-tighter text-stone-300 text-left"
-            >
-              {HERO_CONTENT}
-            </motion.p>
-            <motion.a
-              variants={childVariants}
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              download
-              className="bg-white rounded-full p-4 text-sm font-semibold text-stone-800 mb-10"
-            >
-              Download Resume
-            </motion.a>
-          </motion.div>
-        </div>
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 };
-
 export default Hero;
