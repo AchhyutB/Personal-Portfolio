@@ -50,7 +50,7 @@ const Projects = () => {
                 key={project.title}
                 type="button"
                 onClick={() => setActiveIndex(index)}
-                className={`group relative flex min-w-[230px] items-center border-r border-white/[.07] px-5 py-5 text-left transition lg:min-w-0 lg:border-b lg:border-r-0 lg:px-7 ${activeIndex === index ? "bg-white/[.07]" : "hover:bg-white/[.03]"}`}
+                className={`glass-hover group relative flex min-w-[230px] items-center border-r border-white/[.07] px-5 py-5 text-left transition lg:min-w-0 lg:border-b lg:border-r-0 lg:px-7 ${activeIndex === index ? "bg-white/[.07]" : "hover:bg-white/[.03]"}`}
               >
                 <span
                   className={`absolute bottom-0 left-0 top-0 w-0.5 transition ${activeIndex === index ? "bg-stone-100" : "bg-transparent"}`}
