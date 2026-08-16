@@ -29,7 +29,7 @@ const Projects = () => {
       </div>
       <div className="section-rule" />
       <div className="mt-10 overflow-hidden rounded-[1.75rem] border border-white/[.1] bg-[#0d0d0d] lg:grid lg:grid-cols-[minmax(280px,.66fr)_minmax(0,1.34fr)]">
-        <aside className="border-b border-white/[.1] lg:border-b-0 lg:border-r">
+        <aside className="border-b border-white/[.1] lg:grid lg:min-h-[650px] lg:grid-rows-[auto_1fr] lg:border-b-0 lg:border-r">
           <div className="flex items-center justify-between border-b border-white/[.08] px-5 py-5 sm:px-7">
             <p className="font-mono text-[10px] uppercase tracking-[.2em] text-stone-500">
               Project index
@@ -41,13 +41,16 @@ const Projects = () => {
               </span>
             </div>
           </div>
-          <div className="project-index-scroll flex overflow-x-auto lg:block">
+          <div
+            className="project-index-scroll flex overflow-x-auto lg:grid"
+            style={{ gridTemplateRows: `repeat(${PROJECTS.length}, minmax(0, 1fr))` }}
+          >
             {PROJECTS.map((project, index) => (
               <button
                 key={project.title}
                 type="button"
                 onClick={() => setActiveIndex(index)}
-                className={`group relative min-w-[230px] border-r border-white/[.07] px-5 py-5 text-left transition lg:min-w-0 lg:border-b lg:border-r-0 lg:px-7 ${activeIndex === index ? "bg-white/[.07]" : "hover:bg-white/[.03]"}`}
+                className={`group relative flex min-w-[230px] items-center border-r border-white/[.07] px-5 py-5 text-left transition lg:min-w-0 lg:border-b lg:border-r-0 lg:px-7 ${activeIndex === index ? "bg-white/[.07]" : "hover:bg-white/[.03]"}`}
               >
                 <span
                   className={`absolute bottom-0 left-0 top-0 w-0.5 transition ${activeIndex === index ? "bg-stone-100" : "bg-transparent"}`}
