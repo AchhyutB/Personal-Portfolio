@@ -29,7 +29,7 @@
 
 @layer components {
   .page-shell {
-    @apply relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12;
+    @apply relative mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12 xl:px-16;
   }
   .eyebrow {
     @apply font-mono text-[10px] font-medium uppercase tracking-[0.24em] text-stone-500;
@@ -79,6 +79,17 @@
   background-size: 72px 72px;
   mask-image: radial-gradient(circle at center, black, transparent 74%);
 }
+.intro-mark-3d { transform-style: preserve-3d; perspective: 1200px; }
+.intro-depth { transform: translate3d(14px, 18px, -40px); filter: blur(1px); opacity: .5; }
+@keyframes introScan { from { transform: translateY(0); opacity: 0; } 15%, 85% { opacity: .8; } to { transform: translateY(100vh); opacity: 0; } }
+.intro-scan { animation: introScan 1.9s cubic-bezier(.16,1,.3,1) forwards; }
+.project-index-scroll { scrollbar-color: rgba(214,211,209,.55) rgba(255,255,255,.04); scrollbar-width: thin; }
+.project-index-scroll::-webkit-scrollbar { height: 5px; width: 5px; }
+.project-index-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,.035); }
+.project-index-scroll::-webkit-scrollbar-thumb { background: rgba(214,211,209,.5); border-radius: 999px; }
+.project-index-scroll::-webkit-scrollbar-thumb:hover { background: rgba(245,245,244,.8); }
+.project-swipe-cue i { display: inline-block; margin-left: .3rem; font-style: normal; animation: swipeArrow 1.25s ease-in-out infinite; }
+@keyframes swipeArrow { 50% { transform: translateX(.35rem); opacity: .55; } }
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

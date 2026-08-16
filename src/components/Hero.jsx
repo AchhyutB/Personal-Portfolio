@@ -50,7 +50,7 @@ const Hero = () => {
           transition={{ duration: 0.7 }}
           className="mt-7 max-w-4xl text-[clamp(3.8rem,8.4vw,9rem)] font-semibold leading-[.86] tracking-[-.09em] text-stone-100"
         >
-          Designing the <span className="text-stone-500">web</span>
+          Developing the <span className="text-stone-500">web</span>
           <br />
           with intent.
         </motion.h1>

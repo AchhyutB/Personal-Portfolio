@@ -146,6 +146,6 @@ export const PROJECTS = [
 
 export const CONTACT = {
   address: "Pokhara, Gandaki-Province, Nepal",
-  phoneNo: "+977 9860390766",
+  phoneNo: "+977 000000000",
   email: "achhyut.baral03@gmail.com",
 };

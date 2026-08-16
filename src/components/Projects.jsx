@@ -34,11 +34,14 @@ const Projects = () => {
             <p className="font-mono text-[10px] uppercase tracking-[.2em] text-stone-500">
               Project index
             </p>
-            <span className="font-mono text-[10px] text-stone-600">
-              {String(PROJECTS.length).padStart(2, "0")}
-            </span>
+            <div className="flex items-center gap-3">
+              <span className="project-swipe-cue font-mono text-[9px] uppercase tracking-[.15em] text-stone-600 lg:hidden">Swipe <i>→</i></span>
+              <span className="font-mono text-[10px] text-stone-600">
+                {String(PROJECTS.length).padStart(2, "0")}
+              </span>
+            </div>
           </div>
-          <div className="flex overflow-x-auto lg:block">
+          <div className="project-index-scroll flex overflow-x-auto lg:block">
             {PROJECTS.map((project, index) => (
               <button
                 key={project.title}

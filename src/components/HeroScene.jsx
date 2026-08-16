@@ -21,7 +21,10 @@ const HeroScene = () => {
       antialias: true,
       powerPreference: "high-performance",
     });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    const isCompactViewport = window.innerWidth < 1024;
+    renderer.setPixelRatio(
+      Math.min(window.devicePixelRatio, isCompactViewport ? 1 : 1.5),
+    );
     renderer.setClearColor(0x000000, 0);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     container.appendChild(renderer.domElement);
@@ -80,7 +83,7 @@ const HeroScene = () => {
     orbitC.rotation.set(0.24, -0.95, 1.1);
     universe.add(orbitA, orbitB, orbitC);
 
-    const pointCount = 800;
+    const pointCount = isCompactViewport ? 360 : 800;
     const pointPositions = new Float32Array(pointCount * 3);
     for (let i = 0; i < pointCount; i += 1) {
       const radius = 2.4 + Math.random() * 2.8;
@@ -184,7 +187,7 @@ const HeroScene = () => {
     <div
       ref={host}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 z-0 hidden overflow-hidden opacity-90 lg:block"
+      className="pointer-events-none absolute inset-0 z-0 block overflow-hidden opacity-35 sm:opacity-55 lg:opacity-90"
     />
   );
 };
